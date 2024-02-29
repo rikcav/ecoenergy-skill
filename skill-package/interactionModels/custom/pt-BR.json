@@ -1,0 +1,38 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "samples": [
+            "diga olá",
+            "diga olá mundo",
+            "olá",
+            "diga oi",
+            "diga oi mundo",
+            "oi",
+            "como você está"
+          ],
+          "slots": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        }
+      ],
+      "invocationName": "olá mundo"
+    }
+  }
+}

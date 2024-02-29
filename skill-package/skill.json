@@ -11,6 +11,16 @@
           ],
           "name": "ecoenergy",
           "description": "Sample Full Description"
+        },
+        "pt-BR": {
+          "summary": "Exemplo de descrição curta",
+          "examplePhrases": [
+            "Alexa abra hello world",
+            "olá",
+            "ajuda"
+          ],
+          "name": "ecoenergy",
+          "description": "Exemplo de descrição comprida"
         }
       },
       "isAvailableWorldwide": true,

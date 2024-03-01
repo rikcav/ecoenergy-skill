@@ -1,0 +1,7 @@
+/home/rik/Projects/intellij/blabla/.ask/lambda/src/com/amazon/ask/helloworld/handlers/HelpIntentHandler.java
+/home/rik/Projects/intellij/blabla/.ask/lambda/src/com/amazon/ask/helloworld/handlers/CancelandStopIntentHandler.java
+/home/rik/Projects/intellij/blabla/.ask/lambda/src/com/amazon/ask/helloworld/handlers/HelloWorldIntentHandler.java
+/home/rik/Projects/intellij/blabla/.ask/lambda/src/com/amazon/ask/helloworld/HelloWorldStreamHandler.java
+/home/rik/Projects/intellij/blabla/.ask/lambda/src/com/amazon/ask/helloworld/handlers/SessionEndedRequestHandler.java
+/home/rik/Projects/intellij/blabla/.ask/lambda/src/com/amazon/ask/helloworld/handlers/FallbackIntentHandler.java
+/home/rik/Projects/intellij/blabla/.ask/lambda/src/com/amazon/ask/helloworld/handlers/LaunchRequestHandler.java

@@ -11,7 +11,9 @@ import java.util.Optional;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
+import com.amazon.ask.helloworld.responses.Dica;
 import com.amazon.ask.model.Response;
+import com.google.gson.Gson;
 
 public class AskForTipsIntentHandler implements RequestHandler {
 
@@ -24,15 +26,21 @@ public class AskForTipsIntentHandler implements RequestHandler {
 	public Optional<Response> handle(HandlerInput input) {
 		String apiResponse = apiCall();
 
-		String speechText = "Este é o resultado do Intent de Dicas";
+		Gson gson = new Gson();
+		Dica dica = gson.fromJson(apiResponse, Dica.class);
+
+		String titulo = dica.getTitulo();
+		String descricao = dica.getDescricao();
+
+		String speechText = titulo + ": " + descricao;
 		return input.getResponseBuilder()
 				.withSpeech(speechText)
-				.withSimpleCard("Dicas", apiResponse)
+				.withSimpleCard("Dica", speechText)
 				.build();
 	}
 
 	private String apiCall() {
-		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/dicas";
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/dicas/1";
 		StringBuilder response = new StringBuilder();
 		try {
 			URL url = new URL(apiUrl);

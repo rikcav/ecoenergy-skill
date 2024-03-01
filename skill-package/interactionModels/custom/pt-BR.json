@@ -28,6 +28,17 @@
           "slots": []
         },
         {
+          "name": "AskForTipsIntent",
+          "samples": [
+            "me dê uma dica",
+            "você pode me dar uma dica",
+            "pode me dar uma dica",
+            "dica",
+            "me diga uma dica"
+          ],
+          "slots": []
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

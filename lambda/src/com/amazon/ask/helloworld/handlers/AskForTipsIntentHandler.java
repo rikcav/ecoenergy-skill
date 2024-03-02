@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Optional;
+import java.util.Random;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
@@ -40,11 +41,16 @@ public class AskForTipsIntentHandler implements RequestHandler {
 	}
 
 	private String apiCall() {
-		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/dicas/1";
+		Random random = new Random();
+		int randomNumber = random.nextInt(66) + 1;
+
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/dicas/" + randomNumber;
 		StringBuilder response = new StringBuilder();
+
 		try {
 			URL url = new URL(apiUrl);
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
 			connection.setRequestMethod("GET");
 			connection.setConnectTimeout(5000);
 			connection.setReadTimeout(5000);

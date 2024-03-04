@@ -41,10 +41,7 @@ public class AskForTipsIntentHandler implements RequestHandler {
 	}
 
 	private String apiCall() {
-		Random random = new Random();
-		int randomNumber = random.nextInt(66) + 1;
-
-		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/dicas/" + randomNumber;
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/dicas/aleatoria";
 		StringBuilder response = new StringBuilder();
 
 		try {

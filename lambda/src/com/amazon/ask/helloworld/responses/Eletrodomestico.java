@@ -37,4 +37,14 @@ public class Eletrodomestico {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	@Override
+	public String toString() {
+		return "Eletrodomestico{" +
+				"id=" + id +
+				", nome='" + nome + '\'' +
+				", potencia=" + potencia +
+				", usuario=" + usuario +
+				'}';
+	}
 }

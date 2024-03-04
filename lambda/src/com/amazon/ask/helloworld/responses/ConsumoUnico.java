@@ -37,4 +37,14 @@ public class ConsumoUnico {
 	public void setConsumoMensal(ConsumoMensal consumoMensal) {
 		this.consumoMensal = consumoMensal;
 	}
+
+	@Override
+	public String toString() {
+		return "ConsumoUnico{" +
+				"id=" + id +
+				", horasUso=" + horasUso +
+				", eletrodomestico=" + eletrodomestico +
+				", consumoMensal=" + consumoMensal +
+				'}';
+	}
 }

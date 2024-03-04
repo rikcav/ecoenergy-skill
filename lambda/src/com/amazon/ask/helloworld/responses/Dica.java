@@ -28,4 +28,13 @@ public class Dica {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
+	@Override
+	public String toString() {
+		return "Dica{" +
+				"id=" + id +
+				", titulo='" + titulo + '\'' +
+				", descricao='" + descricao + '\'' +
+				'}';
+	}
 }

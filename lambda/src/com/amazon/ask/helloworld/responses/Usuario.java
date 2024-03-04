@@ -28,4 +28,13 @@ public class Usuario {
 	public void setTarifa(Double tarifa) {
 		this.tarifa = tarifa;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario{" +
+				"id=" + id +
+				", nome='" + nome + '\'' +
+				", tarifa=" + tarifa +
+				'}';
+	}
 }

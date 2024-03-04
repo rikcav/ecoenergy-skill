@@ -38,4 +38,13 @@ public class ConsumoMensal {
 		this.usuario = usuario;
 	}
 
+	@Override
+	public String toString() {
+		return "ConsumoMensal{" +
+				"id=" + id +
+				", nome='" + nome + '\'' +
+				", killowattsHoraTotal=" + killowattsHoraTotal +
+				", usuario=" + usuario +
+				'}';
+	}
 }

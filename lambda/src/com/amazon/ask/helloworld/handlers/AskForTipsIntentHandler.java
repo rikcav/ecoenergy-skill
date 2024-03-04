@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Optional;
-import java.util.Random;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
@@ -33,9 +32,11 @@ public class AskForTipsIntentHandler implements RequestHandler {
 		String titulo = dica.getTitulo();
 		String descricao = dica.getDescricao();
 
-		String speechText = titulo + ": " + descricao;
+		String repromptText = "Se quiser outra dica, basta pedir novamente.";
+		String speechText = titulo + ": " + descricao + "\n" + repromptText;
 		return input.getResponseBuilder()
 				.withSpeech(speechText)
+				.withReprompt(repromptText)
 				.withSimpleCard("Dica", speechText)
 				.build();
 	}

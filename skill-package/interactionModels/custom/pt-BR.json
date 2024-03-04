@@ -39,6 +39,22 @@
           "slots": []
         },
         {
+          "name": "AskForDevicesIntent",
+          "samples": [
+            "aparelhos",
+            "eletrodomésticos",
+            "lista de aparelhos",
+            "lista de eletrodomésticos",
+            "quais são os meus aparelhos",
+            "quais são os meus eletrodomésticos",
+            "me diga que aparelhos eu tenho",
+            "me diga que eletrodomésticos eu tenho",
+            "me dê uma lista dos meus aparelhos",
+            "me dê uma lista dos meus eletrodomésticos"
+          ],
+          "slots": []
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

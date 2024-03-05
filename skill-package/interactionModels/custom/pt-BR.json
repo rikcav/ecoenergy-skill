@@ -47,16 +47,18 @@
             }
           ],
           "samples": [
-            "aparelhos do usuário {id}",
-            "eletrodomésticos do usuário {id}",
-            "lista de aparelhos do usuário {id}",
-            "lista de eletrodomésticos do usuário {id}",
-            "quais são os aparelhos do usuário {id}",
-            "quais são os eletrodomésticos do usuário {id}",
-            "me diga os aparelhos do usuário {id}",
-            "me diga os eletrodomésticos do usuário {id}",
-            "aparelhos {id}",
-            "eletrodomésticos {id}"
+            "liste os meus aparelhos",
+            "liste os meus eletrodomésticos",
+            "lista de aparelhos",
+            "lista de eletrodomésticos",
+            "quais são os meus aparelhos",
+            "quais são os meus eletrodomésticos",
+            "me diga os meus aparelhos",
+            "me diga os meus eletrodomésticos",
+            "meus aparelhos",
+            "meus eletrodomésticos",
+            "aparelhos",
+            "eletrodomésticos"
           ]
         },
         {

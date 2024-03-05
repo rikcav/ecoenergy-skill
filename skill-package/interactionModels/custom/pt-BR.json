@@ -71,6 +71,18 @@
           "slots": []
         },
         {
+          "name": "DeleteUserIntent",
+          "samples": [
+            "delete o meu usuário",
+            "apague o meu usuário",
+            "remova o meu usuário",
+            "deletar usuário",
+            "apagar usuário",
+            "remover usuário"
+          ],
+          "slots": []
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

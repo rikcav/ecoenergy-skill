@@ -20,18 +20,19 @@ import static com.amazon.ask.request.Predicates.intentName;
 
 public class HelloWorldIntentHandler implements RequestHandler {
 
-    @Override
-    public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("HelloWorldIntent"));
-    }
+	@Override
+	public boolean canHandle(HandlerInput input) {
+		return input.matches(intentName("HelloWorldIntent"));
+	}
 
-    @Override
-    public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Olá Eco Energy";
-       return input.getResponseBuilder()
-                .withSpeech(speechText)
-                .withSimpleCard("HelloWorld", speechText)
-                .build();
-    }
+	@Override
+	public Optional<Response> handle(HandlerInput input) {
+		String id = input.getRequestEnvelope().getSession().getUser().getUserId();
+		String speechText = "Olá, usuário " + id;
+		return input.getResponseBuilder()
+				.withSpeech(speechText)
+				.withSimpleCard("HelloWorld", speechText)
+				.build();
+	}
 
 }

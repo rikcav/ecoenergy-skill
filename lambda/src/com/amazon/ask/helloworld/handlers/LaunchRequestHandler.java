@@ -28,7 +28,10 @@ public class LaunchRequestHandler implements RequestHandler {
 
 	@Override
 	public Optional<Response> handle(HandlerInput input) {
-		String speechText = "Bem-vindo ao EcoEnergy. Você pode pedir uma dica para economizar energia";
+		String speechText = "Bem-vindo ao EcoEnergy."
+				+ " A melhor skill Alexa para economizar energia!"
+				+ " Aqui você pode pedir uma dica sobre economia de energia."
+				+ " Pode também saber o valor da sua conta do mês de acordo com o uso dos seus eletrodomésticos.";
 		return input.getResponseBuilder()
 				.withSpeech(speechText)
 				.withSimpleCard("HelloWorld", speechText)

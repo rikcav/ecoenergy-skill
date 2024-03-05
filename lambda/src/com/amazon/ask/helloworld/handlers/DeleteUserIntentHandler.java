@@ -25,7 +25,7 @@ public class DeleteUserIntentHandler implements RequestHandler {
 		String response = apiCall(id);
 
 		String repromptText = "Se quiser solicitar outro serviço, basta pedir.";
-		String speechText = "O seu usuário foi deletado com sucesso. É uma pena deixa-lo ir embora. " + repromptText;
+		String speechText = "O seu usuário foi deletado com sucesso. É uma pena deixá-lo ir embora. " + repromptText;
 		String cardText = speechText + response;
 
 		return input.getResponseBuilder()

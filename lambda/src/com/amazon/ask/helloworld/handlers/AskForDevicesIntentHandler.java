@@ -30,11 +30,7 @@ public class AskForDevicesIntentHandler implements IntentRequestHandler {
 
 	@Override
 	public Optional<Response> handle(HandlerInput input, IntentRequest intentRequest) {
-		IntentRequest request = (IntentRequest) input.getRequest();
-
-		Slot idSlot = request.getIntent().getSlots().get("id");
-		String idValue = idSlot.getValue();
-		Long id = Long.valueOf(idValue);
+		String id = input.getRequestEnvelope().getSession().getUser().getUserId();
 
 		String apiResponse = apiCall(id);
 
@@ -65,7 +61,7 @@ public class AskForDevicesIntentHandler implements IntentRequestHandler {
 				.build();
 	}
 
-	private String apiCall(Long id) {
+	private String apiCall(String id) {
 		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/eletrodomestico/usuario/" + id;
 		StringBuilder response = new StringBuilder();
 

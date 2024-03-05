@@ -17,7 +17,6 @@ import com.amazon.ask.dispatcher.request.handler.impl.IntentRequestHandler;
 import com.amazon.ask.helloworld.responses.Eletrodomestico;
 import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
-import com.amazon.ask.model.Slot;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -38,6 +37,16 @@ public class AskForDevicesIntentHandler implements IntentRequestHandler {
 		}.getType();
 		Gson gson = new Gson();
 		List<Eletrodomestico> eletrodomesticos = gson.fromJson(apiResponse, listaDeEletrodomesticos);
+
+		if (eletrodomesticos.isEmpty()) {
+			String reprompt = " Se quiser cadastrar um basta pedir.";
+			String resposta = "Parece que você não possui nenhum eletrodoméstico cadastrado." + reprompt;
+			return input.getResponseBuilder()
+					.withSpeech(resposta)
+					.withReprompt(reprompt)
+					.withSimpleCard("Não há eletrodomésticos", resposta)
+					.build();
+		}
 
 		String nomeDoUsuario = eletrodomesticos.get(0).getUsuario().getNome();
 

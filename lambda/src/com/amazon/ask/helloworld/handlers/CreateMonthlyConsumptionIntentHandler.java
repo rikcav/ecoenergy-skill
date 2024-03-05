@@ -22,109 +22,106 @@ import com.google.gson.Gson;
 
 public class CreateMonthlyConsumptionIntentHandler implements IntentRequestHandler {
 
-    @Override
-    public boolean canHandle(HandlerInput input, IntentRequest intentRequest) {
-        return input.matches(intentName("CreateMonthlyConsumptionIntent"));
-    }
+	@Override
+	public boolean canHandle(HandlerInput input, IntentRequest intentRequest) {
+		return input.matches(intentName("CreateMonthlyConsumptionIntent"));
+	}
 
-    @Override
-    public Optional<Response> handle(HandlerInput input, IntentRequest intentRequest) {
-        IntentRequest request = (IntentRequest) input.getRequest();
+	@Override
+	public Optional<Response> handle(HandlerInput input, IntentRequest intentRequest) {
+		IntentRequest request = (IntentRequest) input.getRequest();
 
-        Slot mesSlot = request.getIntent().getSlots().get("mes");
+		Slot mesSlot = request.getIntent().getSlots().get("mes");
 
+		String id = input.getRequestEnvelope().getSession().getUser().getUserId();
 
-        String id = input.getRequestEnvelope().getSession().getUser().getUserId();
-        String mes = mesSlot.getValue();
+		String usuarioResponse = apiCall(id);
+		Gson gson = new Gson();
+		Usuario usuario = gson.fromJson(usuarioResponse, Usuario.class);
 
+		String mes = mesSlot.getValue();
 
-        ConsumoMensal consumoMensal = new ConsumoMensal();
+		ConsumoMensal consumoMensal = new ConsumoMensal();
+		consumoMensal.setNome(mes);
+		consumoMensal.setKillowattsHoraTotal(0D);
+		consumoMensal.setUsuario(usuario);
 
-        consumoMensal.setNome(mes);
+		String response = apiCall(consumoMensal);
 
+		ConsumoMensal consumoMensalResponse = gson.fromJson(response, ConsumoMensal.class);
 
-        String usuarioResponse = apiCall(id);
-        Gson gson = new Gson();
-        Usuario usuario = gson.fromJson(usuarioResponse, Usuario.class);;
+		String consumoMensalResponseNome = consumoMensalResponse.getNome();
 
-        consumoMensal.setUsuario(usuario);
-        String response = apiCall(consumoMensal);
+		String repromptText = " Se quiser solicitar outros pedidos, basta pedir.";
+		String speechText = "Foi criado um novo consumo mensal para o mes de "
+				+ consumoMensalResponseNome + "."
+				+ repromptText;
+		String cardText = response;
 
+		return input.getResponseBuilder()
+				.withSpeech(speechText)
+				.withReprompt(repromptText)
+				.withSimpleCard("Resposta", cardText)
+				.build();
+	}
 
-        ConsumoMensal consumoMensalResponse = gson.fromJson(response, ConsumoMensal.class);
+	String apiCall(ConsumoMensal consumoMensal) {
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/consumos-mensais";
+		StringBuilder response = new StringBuilder();
 
-        String consumoMensalResponseNome =consumoMensalResponse.getNome();
+		try {
+			URL url = new URL(apiUrl);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
+			connection.setRequestMethod("POST");
+			connection.setRequestProperty("Content-Type", "application/json");
+			connection.setDoOutput(true);
 
-        String repromptText = " Se quiser solicitar outros pedidos, basta pedir.";
-        String speechText = "Foi criado um novo consumo mensal para o mes de "
-                + consumoMensalResponseNome + "."
-                + repromptText;
-        String cardText = response;
+			Gson gson = new Gson();
+			String jsonInputString = gson.toJson(consumoMensal);
 
-        return input.getResponseBuilder()
-                .withSpeech(speechText)
-                .withReprompt(repromptText)
-                .withSimpleCard("Resposta", cardText)
-                .build();
-    }
+			OutputStream os = connection.getOutputStream();
+			byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
+			os.write(input, 0, input.length);
 
-    String apiCall(ConsumoMensal consumoMensal) {
-        String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/consumos-mensais";
-        StringBuilder response = new StringBuilder();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				response.append(line);
+			}
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Desculpe, ocorreu um erro ao chamar a API.";
+		}
 
-        try {
-            URL url = new URL(apiUrl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		return response.toString();
+	}
 
-            connection.setRequestMethod("POST");
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setDoOutput(true);
+	private String apiCall(String id) {
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/usuarios/" + id;
+		StringBuilder response = new StringBuilder();
 
-            Gson gson = new Gson();
-            String jsonInputString = gson.toJson(consumoMensal);
+		try {
+			URL url = new URL(apiUrl);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-            OutputStream os = connection.getOutputStream();
-            byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
-            os.write(input, 0, input.length);
+			connection.setRequestMethod("GET");
+			connection.setConnectTimeout(5000);
+			connection.setReadTimeout(5000);
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "Desculpe, ocorreu um erro ao chamar a API.";
-        }
+			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				response.append(line);
+			}
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "Desculpe, ocorreu um erro ao chamar a API.";
+		}
 
-        return response.toString();
-    }
-    private String apiCall(String id) {
-        String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/usuarios/" + id;
-        StringBuilder response = new StringBuilder();
-
-        try {
-            URL url = new URL(apiUrl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-            connection.setRequestMethod("GET");
-            connection.setConnectTimeout(5000);
-            connection.setReadTimeout(5000);
-
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "Desculpe, ocorreu um erro ao chamar a API.";
-        }
-
-        return response.toString();
-    }
+		return response.toString();
+	}
 
 }

@@ -49,9 +49,10 @@ public class CreateUserIntentHandler implements IntentRequestHandler {
 		String usuarioResponseNome = usuarioResponse.getNome();
 		Double usuarioResponseTarifa = usuarioResponse.getTarifa();
 
-		String repromptText = " Se quiser solicitar outros pedidos, basta pedir";
+		String repromptText = " Se quiser solicitar outros pedidos, basta pedir.";
 		String speechText = "Foi criado um novo usuário com nome "
-				+ usuarioResponseNome + " e com tarifa " + usuarioResponseTarifa + repromptText;
+				+ usuarioResponseNome + " e com tarifa " + usuarioResponseTarifa + "."
+				+ repromptText;
 		String cardText = response;
 
 		return input.getResponseBuilder()

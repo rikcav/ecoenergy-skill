@@ -83,6 +83,26 @@
           "slots": []
         },
         {
+          "name": "CreateUserIntent",
+          "slots": [
+            {
+              "name": "firstname",
+              "type": "AMAZON.FirstName"
+            },
+            {
+              "name": "tarifa",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "criar usuário com nome {firstname} e com tarifa {tarifa}",
+            "meu nome é {firstname} e minha tarifa é {tarifa}",
+            "crie um usuário com nome {firstname} e com tarifa {tarifa}",
+            "novo usuário com nome {firstname} e tarifa {tarifa}",
+            "usuário novo com nome {firstname} e tarifa {tarifa}"
+          ]
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

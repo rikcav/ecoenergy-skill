@@ -17,6 +17,7 @@ import com.amazon.ask.dispatcher.request.handler.impl.IntentRequestHandler;
 import com.amazon.ask.helloworld.responses.Eletrodomestico;
 import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
+import com.amazon.ask.model.Slot;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -29,14 +30,22 @@ public class AskForDevicesIntentHandler implements IntentRequestHandler {
 
 	@Override
 	public Optional<Response> handle(HandlerInput input, IntentRequest intentRequest) {
-		String apiResponse = apiCall();
+		IntentRequest request = (IntentRequest) input.getRequest();
+
+		Slot idSlot = request.getIntent().getSlots().get("id");
+		String idValue = idSlot.getValue();
+		Long id = Long.valueOf(idValue);
+
+		String apiResponse = apiCall(id);
 
 		Type listaDeEletrodomesticos = new TypeToken<ArrayList<Eletrodomestico>>() {
 		}.getType();
 		Gson gson = new Gson();
 		List<Eletrodomestico> eletrodomesticos = gson.fromJson(apiResponse, listaDeEletrodomesticos);
 
-		String apresentacao = "O usuário possui os seguintes eletrodomésticos: ";
+		String nomeDoUsuario = eletrodomesticos.get(0).getUsuario().getNome();
+
+		String apresentacao = nomeDoUsuario + " possui os seguintes eletrodomésticos: ";
 		String listaDeNomes = "";
 		String reprompt = "Se quiser ouvir de novo, basta pedir novamente.";
 
@@ -56,8 +65,8 @@ public class AskForDevicesIntentHandler implements IntentRequestHandler {
 				.build();
 	}
 
-	private String apiCall() {
-		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/eletrodomestico/usuario/1";
+	private String apiCall(Long id) {
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/eletrodomestico/usuario/" + id;
 		StringBuilder response = new StringBuilder();
 
 		try {

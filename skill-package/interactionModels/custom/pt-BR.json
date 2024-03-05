@@ -105,6 +105,22 @@
           ]
         },
         {
+          "name": "CreateMonthlyConsumptionIntent",
+          "slots": [
+          {
+            "name": "mes",
+            "type": "AMAZON.Month"
+          }
+        ],
+        "samples": [
+          "criar um novo consumo mensal {mes}",
+          "novo consumo mensal para {mes} ",
+          "crie um novo consumo para o {mes}",
+          "consumo mensal novo {mes}",
+          "crie um consumo mensal novo {mes}"
+        ]
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

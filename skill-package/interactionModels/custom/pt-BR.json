@@ -60,6 +60,17 @@
           ]
         },
         {
+          "name": "AskForUserIntent",
+          "samples": [
+            "quais são os meus dados",
+            "me diga os meus dados",
+            "dados do meu usuário",
+            "usuário",
+            "dados"
+          ],
+          "slots": []
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

@@ -224,6 +224,19 @@
           ]
         },
         {
+          "name": "AskForAllMonthlyConsumptionsIntent",
+          "slots": [],
+          "samples": [
+            "consumos mensais",
+            "quais são os meus consumos mensais",
+            "mostre meus consumos mensais",
+            "gostaria de ver meus consumos mensais",
+            "quero saber sobre meus consumos mensais",
+            "pode me informar meus consumos mensais",
+            "quais foram meus consumos mensais"
+          ]
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

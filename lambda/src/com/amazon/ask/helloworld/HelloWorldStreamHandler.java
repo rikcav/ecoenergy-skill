@@ -13,6 +13,7 @@ package com.amazon.ask.helloworld;
 import com.amazon.ask.Skill;
 import com.amazon.ask.Skills;
 import com.amazon.ask.SkillStreamHandler;
+import com.amazon.ask.helloworld.handlers.AskForAllMonthlyConsumptionsIntentHandler;
 import com.amazon.ask.helloworld.handlers.AskForDevicesIntentHandler;
 import com.amazon.ask.helloworld.handlers.AskForTipsIntentHandler;
 import com.amazon.ask.helloworld.handlers.AskForUserIntentHandler;
@@ -41,6 +42,7 @@ public class HelloWorldStreamHandler extends SkillStreamHandler {
 						new CreateUserIntentHandler(),
 						new CreateMonthlyConsumptionIntentHandler(),
 						new CreateDeviceIntentHandler(),
+						new AskForAllMonthlyConsumptionsIntentHandler(),
 						new HelpIntentHandler(),
 						new LaunchRequestHandler(),
 						new SessionEndedRequestHandler(),

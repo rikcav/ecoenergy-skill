@@ -71,7 +71,7 @@ public class AskForDevicesIntentHandler implements IntentRequestHandler {
 	}
 
 	private String apiCall(String id) {
-		String apiUrl = "https://jipe-fitec-production.up.railway.app/eletrodomestico/usuario/" + id;
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/eletrodomestico/usuario/" + id;
 		StringBuilder response = new StringBuilder();
 
 		try {

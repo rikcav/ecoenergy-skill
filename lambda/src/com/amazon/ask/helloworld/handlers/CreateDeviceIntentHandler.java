@@ -73,7 +73,7 @@ public class CreateDeviceIntentHandler implements RequestHandler {
 	}
 
 	private String apiCall(Eletrodomestico eletrodomestico) {
-		String apiUrl = "https://jipe-fitec-production.up.railway.app/eletrodomestico";
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/eletrodomestico";
 		StringBuilder response = new StringBuilder();
 
 		try {
@@ -106,7 +106,7 @@ public class CreateDeviceIntentHandler implements RequestHandler {
 	}
 
 	private String apiCall(String id) {
-		String apiUrl = "https://jipe-fitec-production.up.railway.app/usuarios/" + id;
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/usuarios/" + id;
 		StringBuilder response = new StringBuilder();
 
 		try {

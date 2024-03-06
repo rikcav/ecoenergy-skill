@@ -42,7 +42,7 @@ public class AskForTipsIntentHandler implements RequestHandler {
 	}
 
 	private String apiCall() {
-		String apiUrl = "https://jipe-fitec-production.up.railway.app/dicas/aleatoria";
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/dicas/aleatoria";
 		StringBuilder response = new StringBuilder();
 
 		try {

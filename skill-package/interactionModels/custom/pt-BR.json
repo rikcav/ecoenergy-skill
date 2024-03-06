@@ -1,6 +1,90 @@
 {
   "interactionModel": {
     "languageModel": {
+      "types": [
+        {
+          "name": "DevicesType",
+          "values": [
+            {
+              "id": "Geladeira",
+              "name": {
+                "value": "Geladeira",
+                "synonyms": ["geladeira", "refrigerador"]
+              }
+            },
+            {
+              "id": "Televisão",
+              "name": {
+                "value": "Televisão",
+                "synonyms": ["TV", "televisão"]
+              }
+            },
+            {
+              "id": "Lâmpada",
+              "name": {
+                "value": "Lâmpada",
+                "synonyms": ["lâmpada", "luz"]
+              }
+            },
+            {
+              "id": "Ventilador",
+              "name": {
+                "value": "Ventilador",
+                "synonyms": ["ventilador"]
+              }
+            },
+            {
+              "id": "MáquinaDelavar",
+              "name": {
+                "value": "Máquina de lavar",
+                "synonyms": ["máquina de lavar", "lavadora"]
+              }
+            },
+            {
+              "id": "FerroDePassar",
+              "name": {
+                "value": "Ferro de passar",
+                "synonyms": ["ferro de passar", "ferro de passar roupa"]
+              }
+            },
+            {
+              "id": "Computador",
+              "name": {
+                "value": "Computador",
+                "synonyms": ["computador", "PC"]
+              }
+            },
+            {
+              "id": "Laptop",
+              "name": {
+                "value": "Laptop",
+                "synonyms": ["Laptop", "Notebook"]
+              }
+            },
+            {
+              "id": "CarregadorDeCelular",
+              "name": {
+                "value": "Carregador de celular",
+                "synonyms": ["carregador de celular"]
+              }
+            },
+            {
+              "id": "ChuveiroElétrico",
+              "name": {
+                "value": "Chuveiro elétrico",
+                "synonyms": ["chuveiro elétrico", "ducha elétrica"]
+              }
+            },
+            {
+              "id": "FogãoElétrico",
+              "name": {
+                "value": "Fogão elétrico",
+                "synonyms": ["fogão elétrico"]
+              }
+            }
+          ]
+        }
+      ],
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -40,12 +124,7 @@
         },
         {
           "name": "AskForDevicesIntent",
-          "slots": [
-            {
-              "name": "id",
-              "type": "AMAZON.NUMBER"
-            }
-          ],
+          "slots": [],
           "samples": [
             "liste os meus aparelhos",
             "liste os meus eletrodomésticos",
@@ -118,6 +197,30 @@
             "crie um novo consumo para o {mes}",
             "consumo mensal novo {mes}",
             "crie um consumo mensal novo {mes}"
+          ]
+        },
+        {
+          "name": "CreateDeviceIntent",
+          "slots": [
+            {
+              "name": "aparelho",
+              "type": "DevicesType"
+            },
+            {
+              "name": "potencia",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "criar um aparelho {aparelho} com potência {potencia}",
+            "com potência {potencia} criar um aparelho {aparelho}",
+            "criar com potência {potencia} um aparelho {aparelho}",
+            "com {potencia} potência criar um aparelho {aparelho}",
+            "criar um aparelho {aparelho} de potência {potencia}",
+            "de potência {potencia} criar um aparelho {aparelho}",
+            "criar um {aparelho} com potência {potencia}",
+            "com potência {potencia} criar um {aparelho}",
+            "novo aparelho {aparelho} com potência {potencia}"
           ]
         },
         {

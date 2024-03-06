@@ -112,15 +112,32 @@
           "slots": []
         },
         {
-          "name": "CreateMonthlyConsumptionIntent",
-          "samples":[
-            "criar um novo consumo unico {horasUso} {potencia} ",
-            "novo consumo unico para {horasUso} {potencia} ",
-            "crie um novo consumo unico  {horasUso} {potencia} ",
-            "consumo unico novo {horasUso} {potencia} ",
-            "crie um consumo unico novo {horasUso} {potencia}"
+          "name": "CreateConsumptionIntent",
+          "slots" : [
+            {
+              "name": "horasUso",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "aparelho",
+              "type": "DevicesType"
+            },
+            {
+              "name": "mes",
+              "type": "AMAZON.Month"
+            }
           ],
-          "slots" :[]
+          "samples": [
+            "adicionar {horasUso} horas de uso ao {aparelho} durante o mês de {mes}",
+            "adicionar {horasUso} horas de uso ao {aparelho} durante {mes}",
+            "usei a {aparelho} durante mais {horasUso} no mês de {mes}",
+            "mais {horasUso} horas de uso do {aparelho} durante o mês {mes}",
+            "mais {horasUso} horas de uso do {aparelho} durante {mes}",
+            "mais {horasUso} horas de uso da {aparelho} durante o mês {mes}",
+            "mais {horasUso} horas de uso da {aparelho} durante {mes}",
+            "acrescente a {mes} mais {horasUso} horas de uso do {aparelho}",
+            "acrescente a {mes} mais {horasUso} horas de uso da {aparelho}"
+          ]
         },
         {
           "name": "AskForTipsIntent",

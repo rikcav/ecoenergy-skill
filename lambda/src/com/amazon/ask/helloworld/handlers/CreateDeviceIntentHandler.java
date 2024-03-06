@@ -61,7 +61,7 @@ public class CreateDeviceIntentHandler implements RequestHandler {
 
 		String repromptText = " Se quiser solicitar outros pedidos, basta pedir.";
 		String speechText = "Foi criado um novo eletrodoméstico com o nome "
-				+ eletrodomesticoNome + " e potência de " + eletrodomesticoPotencia + "watts."
+				+ eletrodomesticoNome + " e potência de " + eletrodomesticoPotencia + " Watts."
 				+ repromptText;
 		String cardText = response;
 

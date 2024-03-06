@@ -63,7 +63,7 @@ public class CreateUserIntentHandler implements IntentRequestHandler {
 	}
 
 	String apiCall(Usuario usuario) {
-		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/usuarios";
+		String apiUrl = "https://jipe-fitec-production.up.railway.app/usuarios";
 		StringBuilder response = new StringBuilder();
 
 		try {

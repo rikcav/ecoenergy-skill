@@ -112,6 +112,17 @@
           "slots": []
         },
         {
+          "name": "CreateMonthlyConsumptionIntent",
+          "samples":[
+            "criar um novo consumo unico {horasUso} {potencia} ",
+            "novo consumo unico para {horasUso} {potencia} ",
+            "crie um novo consumo unico  {horasUso} {potencia} ",
+            "consumo unico novo {horasUso} {potencia} ",
+            "crie um consumo unico novo {horasUso} {potencia}"
+          ],
+          "slots" :[]
+        },
+        {
           "name": "AskForTipsIntent",
           "samples": [
             "me dê uma dica",

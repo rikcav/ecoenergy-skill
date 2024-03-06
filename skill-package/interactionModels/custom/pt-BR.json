@@ -121,6 +121,30 @@
           ]
         },
         {
+          "name": "CreateDeviceIntent",
+          "slots": [
+            {
+              "name": "aparelho",
+              "type": "AMAZON.DeviceType"
+            },
+            {
+              "name": "potencia",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "criar um aparelho {aparelho} com potência {potencia}",
+            "com potência {potencia}, criar um aparelho {aparelho}",
+            "criar com potência {potencia} um aparelho {aparelho}",
+            "com {potencia} potência, criar um aparelho {aparelho}",
+            "criar um aparelho {aparelho} de potência {potencia}",
+            "de potência {potencia}, criar um aparelho {aparelho}",
+            "criar um {aparelho} com potência {potencia}",
+            "com potência {potencia}, criar um {aparelho}",
+            "novo aparelho {aparelho} com potência {potencia}"
+          ]
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

@@ -66,7 +66,7 @@ public class CreateMonthlyConsumptionIntentHandler implements IntentRequestHandl
 	}
 
 	String apiCall(ConsumoMensal consumoMensal) {
-		String apiUrl = "https://jipe-fitec-production.up.railway.app/consumos-mensais";
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/consumos-mensais";
 		StringBuilder response = new StringBuilder();
 
 		try {
@@ -99,7 +99,7 @@ public class CreateMonthlyConsumptionIntentHandler implements IntentRequestHandl
 	}
 
 	private String apiCall(String id) {
-		String apiUrl = "https://jipe-fitec-production.up.railway.app/usuarios/" + id;
+		String apiUrl = "https://ecoenergy-15d81b17ef15.herokuapp.com/usuarios/" + id;
 		StringBuilder response = new StringBuilder();
 
 		try {

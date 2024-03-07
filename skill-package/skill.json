@@ -20,7 +20,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "arn:aws:lambda:us-east-1:308897354528:function:ask-ecoenergy-skill-default-default-1709316065706"
+          "uri": "arn:aws:lambda:us-east-1:308897354528:function:ask-ecoenergy-skill-default-default-1709817071284"
         }
       }
     },

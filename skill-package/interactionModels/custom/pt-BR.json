@@ -265,6 +265,25 @@
           ]
         },
         {
+          "name": "AskForMonthlyBillIntent",
+          "slots": [
+            {
+              "name": "mes",
+              "type": "AMAZON.Month"
+            }
+          ],
+          "samples": [
+            "conta de {mes}",
+            "conta do mês de {mes}",
+            "qual a conta de {mes}",
+            "qual a conta do mês de {mes}",
+            "quanto está minha conta de {mes}",
+            "quanto está minha conta do mês de {mes}",
+            "em quanto está a conta de {mes}",
+            "em quanto está a conta do mês de {mes}"
+          ]
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

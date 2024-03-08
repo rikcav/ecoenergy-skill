@@ -3,7 +3,7 @@ package com.amazon.ask.helloworld.responses;
 public class ConsumoMensal {
 	private Long id;
 	private String nome;
-	private Double killowattsHoraTotal;
+	private Double kilowattsHoraTotal;
 	private Usuario usuario;
 
 	public Long getId() {
@@ -22,12 +22,12 @@ public class ConsumoMensal {
 		this.nome = nome;
 	}
 
-	public Double getKillowattsHoraTotal() {
-		return killowattsHoraTotal;
+	public Double getKilowattsHoraTotal() {
+		return kilowattsHoraTotal;
 	}
 
-	public void setKillowattsHoraTotal(Double killowattsHoraTotal) {
-		this.killowattsHoraTotal = killowattsHoraTotal;
+	public void setKilowattsHoraTotal(Double kilowattsHoraTotal) {
+		this.kilowattsHoraTotal = kilowattsHoraTotal;
 	}
 
 	public Usuario getUsuario() {
@@ -43,7 +43,7 @@ public class ConsumoMensal {
 		return "ConsumoMensal{" +
 				"id=" + id +
 				", nome='" + nome + '\'' +
-				", killowattsHoraTotal=" + killowattsHoraTotal +
+				", kilowattsHoraTotal=" + kilowattsHoraTotal +
 				", usuario=" + usuario +
 				'}';
 	}

@@ -43,7 +43,7 @@ public class CreateMonthlyConsumptionIntentHandler implements IntentRequestHandl
 
 		ConsumoMensal consumoMensal = new ConsumoMensal();
 		consumoMensal.setNome(mes);
-		consumoMensal.setKillowattsHoraTotal(0D);
+		consumoMensal.setKilowattsHoraTotal(0.0);
 		consumoMensal.setUsuario(usuario);
 
 		String response = apiCall(consumoMensal);

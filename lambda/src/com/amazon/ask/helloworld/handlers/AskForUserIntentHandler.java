@@ -34,7 +34,7 @@ public class AskForUserIntentHandler implements RequestHandler {
 		Double tarifa = usuario.getTarifa();
 
 		String repromptText = "Se quiser ouvir novamente, basta pedir de novo.";
-		String speechText = "O nome do usuário é " + nome + " e sua tarifa é " + tarifa + " por killowatts hora. "
+		String speechText = "O nome do usuário é " + nome + " e sua tarifa é " + tarifa + " reais por killowatts hora. "
 				+ repromptText;
 		String cardText = speechText;
 

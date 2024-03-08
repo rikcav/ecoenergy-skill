@@ -284,6 +284,27 @@
           ]
         },
         {
+          "name": "AskForConsumptionsOfTheMonthIntent",
+          "slots": [
+            {
+              "name": "mes",
+              "type": "AMAZON.Month"
+            }
+          ],
+          "samples": [
+            "consumos de {mes}",
+            "consumos do mês de {mes}",
+            "meus consumos de {mes}",
+            "meus consumos do mês de {mes}",
+            "todos os consumos de {mes}",
+            "todos os consumos do mês de {mes}",
+            "quais foram os consumos de {mes}",
+            "quais foram os consumos do mês de {mes}",
+            "meus consumos em {mes}",
+            "meus consumo no mês de {mes}"
+          ]
+        },
+        {
           "name": "AMAZON.FallbackIntent",
           "samples": []
         }

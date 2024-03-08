@@ -64,12 +64,12 @@ public class AskForConsumptionsOfTheMonthIntentHandler implements RequestHandler
 
 		String nomeDoUsuario = consumosUnicos.get(0).getConsumoMensal().getUsuario().getNome();
 
-		String apresentacao = nomeDoUsuario + " possui os utilizou os seguintes eletrodomésticos durante " + mes + ": ";
+		String apresentacao = nomeDoUsuario + " utilizou os seguintes eletrodomésticos durante " + mes + ": ";
 		String listaDeConsumos = "";
 		String repromptText = " Se quiser ouvir de novo, basta pedir novamente.";
 
 		for (ConsumoUnico consumoUnico : consumosUnicos) {
-			listaDeConsumos += consumoUnico.getEletrodomestico().getNome() + consumoUnico.getHorasUso()
+			listaDeConsumos += consumoUnico.getEletrodomestico().getNome() + " " + consumoUnico.getHorasUso()
 					+ " horas de uso, ";
 		}
 

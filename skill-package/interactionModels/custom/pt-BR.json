@@ -200,6 +200,31 @@
           ]
         },
         {
+          "name": "DeleteMonthlyConsumptionIntent",
+          "samples": [
+            "deletar meu consumo mensal {mes}",
+            "apague o consumo mensal {mes} ",
+            "quero apagar meu consumo mensal {mes}",
+            "apague o meu consumo mensal {mes}",
+            "deletar o consumo {mes}",
+            "apagar o consumo {mes}"
+          ],
+          "slots": []
+        },
+        {
+          "name": "DeleteMonthlyConsumptionIntent",
+          "samples": [
+            "deletar eletrodomestico {aparelho}",
+            "apague aparelho {aparelho} ",
+            "quero apagar o aparelho {aparelho}",
+            "apague o meu aparelho {aparelho}",
+            "tire da lista o aparelho {aparelho}",
+            "tire o aparelho {aparelho} da lista",
+            "deletar o aparelho {aparelho}"
+          ],
+          "slots": []
+        },
+        {
           "name": "CreateDeviceIntent",
           "slots": [
             {

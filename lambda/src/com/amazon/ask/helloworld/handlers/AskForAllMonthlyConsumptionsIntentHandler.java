@@ -55,7 +55,7 @@ public class AskForAllMonthlyConsumptionsIntentHandler implements RequestHandler
 
 		for (ConsumoMensal consumoMensal : consumoMensais) {
 			listaDeNomesEKWHT += consumoMensal.getNome() + " com "
-					+ consumoMensal.getKillowattsHoraTotal() + " killowatts hora totais" + ", ";
+					+ consumoMensal.getKilowattsHoraTotal() + " kilowatts hora totais" + ", ";
 		}
 
 		listaDeNomesEKWHT = listaDeNomesEKWHT.replaceAll(", $", ". ");
